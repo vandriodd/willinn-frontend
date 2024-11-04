@@ -1,21 +1,14 @@
 'use client'
 
-import Image from 'next/image'
 import { useState } from 'react'
-import { EyeIcon, EyeOffIcon } from '@/app/assets'
+import { EyeIcon, EyeOffIcon, Logo } from '@/components/Assets'
 
 export default function LoginPage() {
   const [visible, setVisible] = useState(false)
 
   return (
-    <main className='flex flex-col'>
-      <Image
-        className='mb-10'
-        src='/logo.svg'
-        width={100}
-        height={100}
-        alt='Willinn logo'
-      />
+    <main className='flex h-screen items-center justify-center'>
+      <Logo className='mb-10' />
       <div className='flex w-[550px] flex-col items-center justify-center rounded-xl bg-white p-10'>
         <h1 className='text-2xl font-medium'>Inicia sesión</h1>
         <form className='mt-8 flex w-full flex-col gap-6'>
@@ -36,6 +29,7 @@ export default function LoginPage() {
                 type={visible ? 'text' : 'password'}
                 className='w-full rounded-lg border border-[#E8E9EA] bg-white p-4 placeholder-[#949CA9] focus:border-accent focus:outline-none'
                 placeholder='Introduce tu contraseña'
+                minLength={6}
                 required
               />
               <button

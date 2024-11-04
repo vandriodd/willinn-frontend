@@ -13,7 +13,3 @@ body {
   background: var(--background);
   font-family: 'Poppins', sans-serif;
 }
-
-main {
-  @apply flex h-screen items-center justify-center;
-}
