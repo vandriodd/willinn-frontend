@@ -7,7 +7,7 @@ export default function LoginPage() {
   const [visible, setVisible] = useState(false)
 
   return (
-    <main className='flex h-screen items-center justify-center'>
+    <main className='flex flex-col flex-1 justify-center items-center h-screen'>
       <Logo className='mb-10' />
       <div className='flex w-[550px] flex-col items-center justify-center rounded-xl bg-white p-10'>
         <h1 className='text-2xl font-medium'>Inicia sesión</h1>

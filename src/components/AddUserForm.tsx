@@ -1,6 +1,6 @@
 export default function AddUserForm() {
   return (
-    <section className='rounded-2xl bg-white px-8 py-3'>
+    <section className='w-1/2 rounded-2xl bg-white px-8 py-3'>
       <form className='flex flex-col px-6 py-4'>
         <h2 className='border border-x-0 border-t-0 border-b-[#F4F6F8] pb-2 text-left text-2xl font-semibold text-[#161C24]'>
           Agregar usuario
@@ -14,7 +14,7 @@ export default function AddUserForm() {
               type='text'
               id='name'
               name='name'
-              className='w-full rounded-lg border border-[#DFE3E8] bg-transparent px-4 py-2 placeholder-[#919EAB] focus:outline-none'
+              className='w-full rounded-lg border border-[#DFE3E8] bg-transparent px-4 py-3 placeholder-[#919EAB] focus:outline-none'
               placeholder='Introduce el nombre'
             />
           </div>
@@ -26,7 +26,7 @@ export default function AddUserForm() {
               type='text'
               id='surname'
               name='surname'
-              className='w-full rounded-lg border border-[#DFE3E8] bg-transparent p-2 px-4 py-2 placeholder-[#919EAB] focus:outline-none'
+              className='w-full rounded-lg border border-[#DFE3E8] bg-transparent p-2 px-4 py-3 placeholder-[#919EAB] focus:outline-none'
               placeholder='Introduce el apellido'
             />
           </div>
@@ -40,7 +40,7 @@ export default function AddUserForm() {
               type='email'
               id='email'
               name='email'
-              className='w-full rounded-lg border border-[#DFE3E8] bg-transparent p-2 px-4 py-2 placeholder-[#919EAB] focus:outline-none'
+              className='w-full rounded-lg border border-[#DFE3E8] bg-transparent p-2 px-4 py-3 placeholder-[#919EAB] focus:outline-none'
               placeholder='Introduce tu E-mail'
             />
           </div>
@@ -52,7 +52,7 @@ export default function AddUserForm() {
               type='password'
               id='password'
               name='password'
-              className='w-full rounded-lg border border-[#DFE3E8] bg-transparent p-2 px-4 py-2 placeholder-[#919EAB] focus:outline-none'
+              className='w-full rounded-lg border border-[#DFE3E8] bg-transparent p-2 px-4 py-3 placeholder-[#919EAB] focus:outline-none'
               placeholder='Introduce tu contraseña'
             />
           </div>
