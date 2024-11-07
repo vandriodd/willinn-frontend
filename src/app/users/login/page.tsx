@@ -1,9 +1,9 @@
 'use client'
 
 import { useState, useActionState } from 'react'
-import { EyeIcon, EyeOffIcon, Logo } from '@/components/Assets'
-import * as actions from '@/actions'
-import Button from '@/components/Button'
+import { EyeIcon, EyeOffIcon, Logo } from '@/lib/components/Assets'
+import * as actions from '@/lib/actions'
+import Button from '@/lib/components/Button'
 
 export default function LoginPage() {
   const [visible, setVisible] = useState(false)

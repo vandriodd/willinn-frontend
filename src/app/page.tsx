@@ -1,6 +1,14 @@
-import { Logo } from '@/components/Assets'
+import { Logo } from '@/lib/components/Assets'
+import { verifySession } from '@/lib/session'
+import { redirect } from 'next/navigation'
 
-export default function Home() {
+export default async function Home() {
+  const session = await verifySession()
+
+  if (session == null) {
+    return redirect('/users/login')
+  }
+
   return (
     <main className='flex flex-1 items-center justify-center'>
       <Logo />

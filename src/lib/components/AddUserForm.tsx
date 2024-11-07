@@ -1,9 +1,17 @@
+'use client'
+
+import { useActionState } from 'react'
+import * as actions from '../actions'
 import Button from './Button'
 
 export default function AddUserForm() {
+  const [formState, action] = useActionState(actions.userCreate, {
+    message: ''
+  })
+
   return (
     <section className='w-1/2 rounded-2xl bg-white px-8 py-3'>
-      <form className='flex flex-col px-6 py-4'>
+      <form action={action} className='flex flex-col px-6 py-4'>
         <h2 className='border border-x-0 border-t-0 border-b-[#F4F6F8] pb-2 text-left text-2xl font-semibold text-[#161C24]'>
           Agregar usuario
         </h2>
@@ -21,7 +29,7 @@ export default function AddUserForm() {
             />
           </div>
           <div className='space-y-2'>
-            <label htmlFor='email' className='font-semibold text-[#161C24]'>
+            <label htmlFor='surname' className='font-semibold text-[#161C24]'>
               Apellido
             </label>
             <input
@@ -47,7 +55,7 @@ export default function AddUserForm() {
             />
           </div>
           <div className='space-y-2'>
-            <label htmlFor='email' className='font-semibold text-[#161C24]'>
+            <label htmlFor='password' className='font-semibold text-[#161C24]'>
               Contraseña
             </label>
             <input
@@ -73,6 +81,11 @@ export default function AddUserForm() {
         </div>
         <Button variant='secondary'>Guardar</Button>
       </form>
+      {formState.message !== '' && (
+        <div className='mt-4 rounded-lg bg-red-100 p-4 text-red-600'>
+          {formState.message}
+        </div>
+      )}
     </section>
   )
 }

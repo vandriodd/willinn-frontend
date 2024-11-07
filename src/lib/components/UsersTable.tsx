@@ -1,12 +1,12 @@
 import type { User } from '@/types'
 import { SearchIcon } from './Assets'
 import UserActions from './UserActions'
-import { getUsers } from '@/services/willinnApi'
+import { getUsers } from '@/lib/services/willinnApi'
 
 export default async function UsersTable() {
   const [error, users] = await getUsers()
 
-  if (error != null) {
+  if (error != null || users == null) {
     return <div>Error loading users</div>
   }
 

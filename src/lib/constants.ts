@@ -5,3 +5,5 @@ export const API_ENDPOINTS = {
   USERS_CREATE: API_URL + '/users',
   LOGIN: API_URL + '/users/login'
 } as const
+
+export const SESSION_COOKIE_NAME = 'willinn-session'

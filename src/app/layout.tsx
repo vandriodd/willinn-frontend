@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import './globals.css'
-import Navbar from '@/components/Navbar'
+import Navbar from '@/lib/components/Navbar'
+import { verifySession } from '@/lib/session'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -17,15 +18,17 @@ export const metadata: Metadata = {
     'user management, login, admin dashboard, secure authentication, Next.js, React, TypeScript, Tailwind CSS'
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const session = await verifySession()
+
   return (
     <html lang='es'>
       <body className={`${poppins.className} flex flex-row flex-nowrap`}>
-        <Navbar />
+        <Navbar isLogged={session !== null} />
         {children}
       </body>
     </html>

@@ -188,7 +188,9 @@ export const EyeOffIcon = () => (
   </svg>
 )
 
-export const Home = (props: React.SVGProps<SVGSVGElement>) => (
+export const Home = (
+  props: React.SVGProps<SVGSVGElement> & { color?: string }
+) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width='23'
@@ -200,7 +202,7 @@ export const Home = (props: React.SVGProps<SVGSVGElement>) => (
     <g clipPath='url(#clip0_1_1611)'>
       <path
         d='M22.3794 10.0039C22.3788 10.0034 22.3783 10.0028 22.3778 10.0023L12.9956 0.620483C12.5957 0.220398 12.064 0 11.4984 0C10.9329 0 10.4012 0.220222 10.0011 0.620308L0.623841 9.9974C0.620682 10.0006 0.617524 10.0039 0.614365 10.007C-0.206863 10.833 -0.205459 12.1731 0.618401 12.997C0.994797 13.3736 1.49192 13.5917 2.02344 13.6145C2.04502 13.6166 2.06678 13.6176 2.08872 13.6176H2.46265V20.5221C2.46265 21.8884 3.5743 23 4.9409 23H8.61151C8.98352 23 9.28534 22.6984 9.28534 22.3262V16.9131C9.28534 16.2896 9.79247 15.7825 10.4159 15.7825H12.581C13.2044 15.7825 13.7115 16.2896 13.7115 16.9131V22.3262C13.7115 22.6984 14.0132 23 14.3854 23H18.056C19.4226 23 20.5342 21.8884 20.5342 20.5221V13.6176H20.881C21.4464 13.6176 21.978 13.3974 22.3783 12.9973C23.203 12.1721 23.2034 10.8297 22.3794 10.0039Z'
-        fill={props?.fill ?? '#CECDCD'}
+        fill={props?.color ?? '#CECDCD'}
       />
     </g>
     <defs>
@@ -211,7 +213,9 @@ export const Home = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-export const Users = (props: React.SVGProps<SVGSVGElement>) => (
+export const Users = (
+  props: React.SVGProps<SVGSVGElement> & { color?: string }
+) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width='28'
@@ -224,19 +228,18 @@ export const Users = (props: React.SVGProps<SVGSVGElement>) => (
       fillRule='evenodd'
       clipRule='evenodd'
       d='M9.33301 4.6666C8.09533 4.6666 6.90835 5.15827 6.03318 6.03344C5.15801 6.90861 4.66634 8.09559 4.66634 9.33327C4.66634 10.5709 5.15801 11.7579 6.03318 12.6331C6.90835 13.5083 8.09533 13.9999 9.33301 13.9999C10.5707 13.9999 11.7577 13.5083 12.6328 12.6331C13.508 11.7579 13.9997 10.5709 13.9997 9.33327C13.9997 8.09559 13.508 6.90861 12.6328 6.03344C11.7577 5.15827 10.5707 4.6666 9.33301 4.6666ZM6.99967 15.1666C5.762 15.1666 4.57501 15.6583 3.69984 16.5334C2.82467 17.4086 2.33301 18.5956 2.33301 19.8333V20.9999C2.33301 21.6188 2.57884 22.2123 3.01643 22.6498C3.45401 23.0874 4.0475 23.3333 4.66634 23.3333H13.9997C14.6185 23.3333 15.212 23.0874 15.6496 22.6498C16.0872 22.2123 16.333 21.6188 16.333 20.9999V19.8333C16.333 18.5956 15.8413 17.4086 14.9662 16.5334C14.091 15.6583 12.904 15.1666 11.6663 15.1666H6.99967ZM15.458 12.7224C16.0157 11.7191 16.333 10.5641 16.333 9.33327C16.3333 8.14728 16.0322 6.98067 15.458 5.94293C16.1205 5.31612 16.9521 4.89715 17.85 4.7378C18.748 4.57846 19.673 4.68572 20.5107 5.04633C21.3483 5.40695 22.062 6.00511 22.5634 6.76689C23.0648 7.52867 23.3321 8.42069 23.3321 9.33268C23.3321 10.2447 23.0648 11.1367 22.5634 11.8985C22.062 12.6603 21.3483 13.2584 20.5107 13.619C19.673 13.9797 18.748 14.0869 17.85 13.9276C16.9521 13.7682 16.1205 13.3492 15.458 12.7224ZM18.0433 23.3333C18.44 22.6473 18.6675 21.8504 18.6675 20.9999V19.8333C18.6697 18.111 18.0347 16.4488 16.8848 15.1666H20.9997C22.2374 15.1666 23.4243 15.6583 24.2995 16.5334C25.1747 17.4086 25.6663 18.5956 25.6663 19.8333V20.9999C25.6663 21.6188 25.4205 22.2123 24.9829 22.6498C24.5453 23.0874 23.9518 23.3333 23.333 23.3333H18.0433Z'
-      fill={props?.fill ?? '#CECDCD'}
+      fill={props?.color ?? '#CECDCD'}
     />
   </svg>
 )
 
-export const SearchIcon = (props: React.SVGProps<SVGSVGElement>) => (
+export const SearchIcon = () => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width='20'
     height='20'
     viewBox='0 0 20 20'
     fill='none'
-    {...props}
   >
     <path
       d='M19.3359 18.2109L14.7344 13.6094C15.875 12.2188 16.5625 10.4375 16.5625 8.49609C16.5625 4.04297 12.9492 0.429688 8.49609 0.429688C4.03906 0.429688 0.429688 4.04297 0.429688 8.49609C0.429688 12.9492 4.03906 16.5625 8.49609 16.5625C10.4375 16.5625 12.2148 15.8789 13.6055 14.7383L18.207 19.3359C18.5195 19.6484 19.0234 19.6484 19.3359 19.3359C19.6484 19.0273 19.6484 18.5195 19.3359 18.2109ZM8.49609 14.957C4.92969 14.957 2.03125 12.0586 2.03125 8.49609C2.03125 4.93359 4.92969 2.03125 8.49609 2.03125C12.0586 2.03125 14.9609 4.93359 14.9609 8.49609C14.9609 12.0586 12.0586 14.957 8.49609 14.957Z'
@@ -245,14 +248,13 @@ export const SearchIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-export const ThreeDots = (props: React.SVGProps<SVGSVGElement>) => (
+export const ThreeDots = () => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width='24'
     height='24'
     viewBox='0 0 24 24'
     fill='none'
-    {...props}
   >
     <path
       d='M18.6078 13.8672C18.3625 13.8673 18.1196 13.819 17.893 13.7252C17.6663 13.6315 17.4604 13.4939 17.2869 13.3205C17.1134 13.1472 16.9757 12.9413 16.8818 12.7147C16.7878 12.4881 16.7395 12.2453 16.7394 12C16.7393 11.7547 16.7875 11.5118 16.8813 11.2852C16.9751 11.0585 17.1126 10.8526 17.286 10.6791C17.4594 10.5056 17.6653 10.3679 17.8918 10.274C18.1184 10.1801 18.3613 10.1317 18.6066 10.1316C19.102 10.1314 19.5771 10.3281 19.9275 10.6782C20.2779 11.0284 20.4748 11.5034 20.475 11.9988C20.4751 12.4942 20.2785 12.9693 19.9283 13.3197C19.5782 13.6701 19.1032 13.867 18.6078 13.8672Z'
@@ -269,7 +271,9 @@ export const ThreeDots = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-export const EditIcon = (props: React.SVGProps<SVGSVGElement>) => (
+export const EditIcon = (
+  props: React.SVGProps<SVGSVGElement> & { color?: string }
+) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width='24'
@@ -280,12 +284,14 @@ export const EditIcon = (props: React.SVGProps<SVGSVGElement>) => (
   >
     <path
       d='M5 19H6.425L16.2 9.225L14.775 7.8L5 17.575V19ZM3 21V16.75L16.2 3.575C16.4 3.39167 16.621 3.25 16.863 3.15C17.105 3.05 17.359 3 17.625 3C17.891 3 18.1493 3.05 18.4 3.15C18.6507 3.25 18.8673 3.4 19.05 3.6L20.425 5C20.625 5.18333 20.771 5.4 20.863 5.65C20.955 5.9 21.0007 6.15 21 6.4C21 6.66667 20.9543 6.921 20.863 7.163C20.7717 7.405 20.6257 7.62567 20.425 7.825L7.25 21H3ZM15.475 8.525L14.775 7.8L16.2 9.225L15.475 8.525Z'
-      fill={props?.fill ?? '#0C1646'}
+      fill={props?.color ?? '#0C1646'}
     />
   </svg>
 )
 
-export const DeleteIcon = (props: React.SVGProps<SVGSVGElement>) => (
+export const DeleteIcon = (
+  props: React.SVGProps<SVGSVGElement> & { color?: string }
+) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width='24'
@@ -296,7 +302,67 @@ export const DeleteIcon = (props: React.SVGProps<SVGSVGElement>) => (
   >
     <path
       d='M7 21C6.45 21 5.97933 20.8043 5.588 20.413C5.19667 20.0217 5.00067 19.5507 5 19V6H4V4H9V3H15V4H20V6H19V19C19 19.55 18.8043 20.021 18.413 20.413C18.0217 20.805 17.5507 21.0007 17 21H7ZM17 6H7V19H17V6ZM9 17H11V8H9V17ZM13 17H15V8H13V17Z'
-      fill={props?.fill ?? '#0C1646'}
+      fill={props?.color ?? '#0C1646'}
     />
+  </svg>
+)
+
+export const LogOutIcon = (
+  props: React.SVGProps<SVGSVGElement> & { color?: string }
+) => (
+  <svg
+    xmlns='http://www.w3.org/2000/svg'
+    width='35'
+    height='35'
+    viewBox='0 0 24 24'
+    {...props}
+  >
+    <g
+      fill='none'
+      stroke={props?.color ?? '#CECDCD'}
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      strokeWidth='2'
+    >
+      <path
+        strokeDasharray='48'
+        strokeDashoffset='48'
+        d='M16 5v-1c0 -0.55 -0.45 -1 -1 -1h-9c-0.55 0 -1 0.45 -1 1v16c0 0.55 0.45 1 1 1h9c0.55 0 1 -0.45 1 -1v-1'
+      >
+        <animate
+          fill='freeze'
+          attributeName='stroke-dashoffset'
+          dur='0.6s'
+          values='48;0'
+        />
+      </path>
+      <path
+        strokeDasharray='12'
+        fill='currentColor'
+        strokeDashoffset='12'
+        d='M10 12h11'
+      >
+        <animate
+          fill='freeze'
+          attributeName='stroke-dashoffset'
+          begin='0.7s'
+          dur='0.2s'
+          values='12;0'
+        />
+      </path>
+      <path
+        strokeDasharray='6'
+        strokeDashoffset='6'
+        d='M21 12l-3.5 -3.5M21 12l-3.5 3.5'
+      >
+        <animate
+          fill='freeze'
+          attributeName='stroke-dashoffset'
+          begin='0.9s'
+          dur='0.2s'
+          values='6;0'
+        />
+      </path>
+    </g>
   </svg>
 )
