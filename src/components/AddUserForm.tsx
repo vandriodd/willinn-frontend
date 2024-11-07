@@ -1,3 +1,5 @@
+import Button from './Button'
+
 export default function AddUserForm() {
   return (
     <section className='w-1/2 rounded-2xl bg-white px-8 py-3'>
@@ -56,7 +58,7 @@ export default function AddUserForm() {
               placeholder='Introduce tu contraseña'
             />
           </div>
-          <div>
+          <div className='py-3'>
             <label className='inline-flex cursor-pointer items-center'>
               <span className='pr-3 font-semibold'>Activar</span>
               <input
@@ -65,16 +67,11 @@ export default function AddUserForm() {
                 className='peer sr-only'
                 defaultChecked
               />
-              <div className="peer relative h-6 w-11 rounded-full bg-[#DFE3E8] after:absolute after:start-[2px] after:top-0.5 after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-[#0DC5A3] peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:ring-4 peer-focus:ring-blue-300 rtl:peer-checked:after:-translate-x-full"></div>
+              <div className="peer relative h-6 w-11 rounded-full bg-[#DFE3E8] after:absolute after:start-[2px] after:top-0.5 after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-[#0DC5A3] peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:ring-4 peer-focus:ring-blue-300 rtl:peer-checked:after:-translate-x-full" />
             </label>
           </div>
         </div>
-        <button
-          type='submit'
-          className='mt-6 w-full rounded-lg bg-[#8F45EF] py-3 text-white focus:outline-none'
-        >
-          Guardar
-        </button>
+        <Button variant='secondary'>Guardar</Button>
       </form>
     </section>
   )

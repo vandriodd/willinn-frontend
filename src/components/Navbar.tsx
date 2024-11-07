@@ -6,8 +6,6 @@ import { usePathname } from 'next/navigation'
 export default function Navbar() {
   const pathname = usePathname()
 
-  console.log(pathname)
-
   if (pathname === '/users/login') return null
 
   const links = [
@@ -26,11 +24,7 @@ export default function Navbar() {
   const renderedLinks = links.map((link, index) => (
     <li key={index}>
       <a
-        className={
-          pathname === link.href
-            ? 'flex items-center font-medium text-accent'
-            : 'flex items-center text-[#CECDCD]'
-        }
+        className={`flex items-center ${pathname === link.href ? 'font-medium text-accent' : 'text-[#CECDCD]'} transition-transform duration-200 ease-in-out hover:scale-105`}
         href={link.href}
       >
         <link.icon fill={pathname === link.href ? '#F72793' : undefined} />

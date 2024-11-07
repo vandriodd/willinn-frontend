@@ -1,15 +1,35 @@
-import { User } from '@/types'
-import { DeleteIcon, EditIcon, SearchIcon, ThreeDots } from './Assets'
+import type { User } from '@/types'
+import { SearchIcon } from './Assets'
+import UserActions from './UserActions'
+import { getUsers } from '@/services/willinnApi'
 
 export default async function UsersTable() {
-  const users = await fetch('http://localhost:3000/users.json')
-    .then((response) => response.json())
-    .then((data) => {
-      return data
-    })
-    .catch((error) => {
-      console.error('Error:', error)
-    })
+  const [error, users] = await getUsers()
+
+  if (error != null) {
+    return <div>Error loading users</div>
+  }
+
+  const renderedUsers = users.map((user: User) => (
+    <tr
+      key={user.id}
+      className='border border-x-0 border-t-0 border-b-[#E6EFF5] py-10 text-[#718EBF]'
+    >
+      <td className='py-4'>{user.name}</td>
+      <td>{user.email}</td>
+      <td>
+        <UserActions userId={user.id} />
+      </td>
+    </tr>
+  ))
+
+  const tableHeadCols = ['Nombre', 'Correo']
+
+  const renderedHeadCols = tableHeadCols.map((col) => (
+    <th key={col} className='py-4 text-left font-medium'>
+      {col}
+    </th>
+  ))
 
   return (
     <section className='w-full rounded-2xl bg-white px-8 pb-10 pt-4'>
@@ -32,27 +52,9 @@ export default async function UsersTable() {
           </div>
         </caption>
         <thead className='border border-x-0 border-t-0 border-b-[#E6EFF5] text-[#343C6A]'>
-          <tr>
-            <th className='py-4 text-left font-medium'>Nombre</th>
-            <th className='py-4 text-left font-medium'>Correo</th>
-          </tr>
+          <tr>{renderedHeadCols}</tr>
         </thead>
-        <tbody>
-          {users.slice(0, 8).map((user: User) => (
-            <tr
-              key={user.id}
-              className='border border-x-0 border-t-0 border-b-[#E6EFF5] py-10 text-[#718EBF]'
-            >
-              <td className='py-4 pr-10'>{user.name}</td>
-              <td>{user.email}</td>
-              <td>
-                <button className='rounded-full bg-[#F5F7FA] p-1 text-accent hover:bg-[#d8d9db] focus:outline-none'>
-                  <ThreeDots />
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
+        <tbody>{renderedUsers}</tbody>
       </table>
     </section>
   )
