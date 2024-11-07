@@ -12,9 +12,12 @@ export default async function UsersPage() {
 
   return (
     <main className='flex-1 px-12 pt-8'>
-      <h1 className='mb-10 self-start text-4xl font-semibold text-[#0C1646]'>
-        Usuarios
-      </h1>
+      <div className='mb-10 flex items-center'>
+        <h1 className='self-start text-4xl font-semibold text-[#0C1646]'>
+          Usuarios
+        </h1>
+        <button className='ml-auto'>aca</button>
+      </div>
       <div className='flex gap-8'>
         <UsersTable />
         <AddUserForm />

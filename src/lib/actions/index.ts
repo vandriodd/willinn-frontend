@@ -1,8 +1,10 @@
 'use server'
 
-import { createUser, logIn } from '@/lib/services/willinnApi'
+import { createUser, deleteUser, logIn } from '@/lib/services/willinnApi'
 import { redirect } from 'next/navigation'
 import { createSession, deleteSession } from '../session'
+import { type User } from '@/types'
+import { revalidatePath } from 'next/cache'
 
 export async function userLogin(
   formState: { message: string },
@@ -65,4 +67,9 @@ export async function userCreate(
   }
 
   redirect('/users')
+}
+
+export async function userDelete({ id }: Pick<User, 'id'>) {
+  await deleteUser({ id })
+  revalidatePath('/users')
 }

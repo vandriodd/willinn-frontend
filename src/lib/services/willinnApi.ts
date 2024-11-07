@@ -96,3 +96,34 @@ export async function createUser({
     return [error]
   }
 }
+
+export async function deleteUser({
+  id
+}: Pick<User, 'id'>): Promise<Error | null> {
+  const session = await verifySession()
+
+  if (session == null) {
+    return new Error('Unauthorized')
+  }
+  console.log('aca')
+
+  try {
+    const res = await fetch(API_ENDPOINTS.USERS_DELETE + id, {
+      method: 'DELETE',
+      headers: {
+        Authorization: 'Bearer ' + session.token
+      }
+    })
+
+    if (!res.ok) {
+      throw new Error('Failed to delete user')
+    }
+
+    return null
+  } catch (error) {
+    if (error instanceof Error) {
+      return error
+    }
+    return Error('Error desconocido')
+  }
+}

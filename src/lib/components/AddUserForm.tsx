@@ -10,7 +10,7 @@ export default function AddUserForm() {
   })
 
   return (
-    <section className='w-1/2 rounded-2xl bg-white px-8 py-3'>
+    <section className='w-1/2 min-w-80 rounded-2xl bg-white px-8 py-3'>
       <form action={action} className='flex flex-col px-6 py-4'>
         <h2 className='border border-x-0 border-t-0 border-b-[#F4F6F8] pb-2 text-left text-2xl font-semibold text-[#161C24]'>
           Agregar usuario
