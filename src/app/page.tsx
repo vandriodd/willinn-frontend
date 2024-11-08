@@ -5,7 +5,7 @@ import { redirect } from 'next/navigation'
 export default async function Home() {
   const session = await verifySession()
 
-  if (session == null) {
+  if (session === null || session === undefined) {
     return redirect('/users/login')
   }
 

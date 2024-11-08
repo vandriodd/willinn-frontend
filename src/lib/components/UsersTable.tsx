@@ -50,16 +50,19 @@ export default function UsersTable({ users }: UsersTableProps) {
             <h2 className='text-left text-base font-medium text-[#343C6A]'>
               Usuarios
             </h2>
-            <label>
-              Mostrar inactivos
+            <label className='inline-flex cursor-pointer items-center'>
+              <span className='pr-2 text-sm font-medium text-[#343C6A]'>
+                Ver inactivos
+              </span>
               <input
+                type='checkbox'
                 onChange={() => {
                   setFilterActive(!filterActive)
                 }}
                 checked={filterActive}
-                type='checkbox'
-                className='ml-auto mr-2 focus:outline-none'
+                className='peer sr-only'
               />
+              <div className="peer relative h-4 w-8 flex-shrink-0 rounded-full bg-[#DFE3E8] after:absolute after:left-[2px] after:top-0.5 after:h-3 after:w-3 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-[#0DC5A3] peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:ring-2 peer-focus:ring-blue-300 rtl:peer-checked:after:-translate-x-full" />
             </label>
             <div className='relative flex'>
               <input
