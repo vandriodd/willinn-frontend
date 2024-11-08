@@ -16,29 +16,34 @@ export default function UserActions({ userId }: UserActionsProps) {
   }
 
   return (
-    <div
-      role='button'
-      onClick={handleOpen}
-      className='rounded-full bg-[#F5F7FA] p-1 text-accent hover:bg-[#d8d9db] focus:outline-none'
-    >
-      {isOpen ? (
-        <div className='flex gap-2'>
-          <form action=''>
-            <EditIcon />
-          </form>
-          <form action={actions.userDelete.bind(null, { id: userId })}>
-            <button
-              onClick={(e) => {
-                e.stopPropagation()
-              }}
+    <div className='flex justify-end'>
+      <div
+        role='button'
+        onClick={handleOpen}
+        className='w-fit rounded-full bg-[#F5F7FA] p-1 text-accent hover:bg-[#d8d9db] focus:outline-none'
+      >
+        {isOpen ? (
+          <div className='flex items-center gap-2'>
+            <form
+              className='h-6'
+              action={actions.userDelete.bind(null, { id: userId })}
             >
-              <DeleteIcon />
-            </button>
-          </form>
-        </div>
-      ) : (
-        <ThreeDots />
-      )}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation()
+                }}
+              >
+                <DeleteIcon />
+              </button>
+            </form>
+            <form action=''>
+              <EditIcon />
+            </form>
+          </div>
+        ) : (
+          <ThreeDots />
+        )}
+      </div>
     </div>
   )
 }

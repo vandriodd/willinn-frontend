@@ -38,7 +38,7 @@ export default function Navbar({ isLogged }: { isLogged: boolean }) {
   ))
 
   return (
-    <nav className='md:w-/6 sticky left-0 top-0 h-screen w-1/5 min-w-48 overflow-x-hidden bg-white lg:w-[14%]'>
+    <nav className='sticky left-0 top-0 max-h-screen min-h-screen min-w-48 bg-white'>
       <div className='flex h-full flex-col items-center justify-start gap-16 px-3 py-4'>
         <a href='/' className='py-8'>
           <Logo />

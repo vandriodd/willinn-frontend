@@ -105,7 +105,6 @@ export async function deleteUser({
   if (session == null) {
     return new Error('Unauthorized')
   }
-  console.log('aca')
 
   try {
     const res = await fetch(API_ENDPOINTS.USERS_DELETE + id, {
